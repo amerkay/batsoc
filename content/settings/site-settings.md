@@ -1,5 +1,6 @@
 ---
 logo: /img/logo.png
+navLeftButton: Donate via Patreon
 navigation:
   - label: Home
     url: /
