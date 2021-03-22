@@ -64,6 +64,9 @@ collections:
           - label: Logo
             name: logo
             widget: image
+          - label: 'Top Navigation Left Button Text'
+            name: navLeftButton
+            widget: string
           - label: 'Top Navigation Menu buttons'
             name: 'navigation'
             widget: 'list'
