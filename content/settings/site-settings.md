@@ -1,5 +1,5 @@
 ---
-logo: fdsfds
+logo: /img/logo.png
 navigation:
   - label: Home
     url: /
