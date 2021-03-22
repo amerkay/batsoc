@@ -39,84 +39,24 @@
             </svg>
           </button>
         </div>
+
         <nav class="hidden space-x-10 md:flex">
-          <div class="relative">
-            <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-            <button
-              type="button"
-              class="inline-flex items-center text-base font-medium text-gray-500 bg-white rounded-md group hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              aria-expanded="false"
-            >
-              <span>Solutions</span>
-              <!--
-                Heroicon name: solid/chevron-down
-
-                Item active: "text-gray-600", Item inactive: "text-gray-400"
-              -->
-              <svg
-                class="w-5 h-5 ml-2 text-gray-400 group-hover:text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-
           <a
-            href="#"
+            href="navItem.url"
             class="text-base font-medium text-gray-500 hover:text-gray-900"
+            v-for="navItem in siteSettings.navigation"
+            :key="navItem.label"
           >
-            Pricing
+            navItem.label
           </a>
-          <a
-            href="#"
-            class="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Docs
-          </a>
-
-          <div class="relative">
-            <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-            <button
-              type="button"
-              class="inline-flex items-center text-base font-medium text-gray-500 bg-white rounded-md group hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              aria-expanded="false"
-            >
-              <span>More</span>
-              <!--
-                Heroicon name: solid/chevron-down
-
-                Item active: "text-gray-600", Item inactive: "text-gray-400"
-              -->
-              <svg
-                class="w-5 h-5 ml-2 text-gray-400 group-hover:text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
         </nav>
+
         <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
           <a
             href="#"
             class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:bg-indigo-700"
           >
-            Donate on Patreon
+            siteSettings.label
           </a>
         </div>
       </div>
@@ -380,5 +320,15 @@
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    // map current logoText and businessType from store
+    ...mapState('netlifycms', ['siteSettings']),
+  },
+  mounted() {
+    console.log(this.siteSettings)
+  },
+}
 </script>
