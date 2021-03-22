@@ -57,16 +57,13 @@ collections:
       - label: General
         name: general
         format: 'json'
-        file: 'content/settings/site-settings.md'
+        file: 'content/settings/site-settings.json'
         editor:
           preview: false
         fields:
           - label: Logo
             name: logo
             widget: image
-          - label: 'Top Navigation Left Button Text'
-            name: navLeftButton
-            widget: string
           - label: 'Top Navigation Menu buttons'
             name: 'navigation'
             widget: 'list'
@@ -80,6 +77,10 @@ collections:
                 name: url
                 widget: string
                 default: '/'
+              - label: 'Show this on left?'
+                name: is_on_left
+                widget: boolean
+                default: false
           - label: 'Facebook Page slug (not url)'
             name: 'facebook'
             widget: 'string'
@@ -90,7 +91,7 @@ collections:
             name: 'instagram'
             widget: 'string'
           - label: 'Footer text'
-            name: 'footerText'
+            name: 'footer_text'
             widget: 'string'
           - label: 'Meta Data Defaults'
             name: 'meta'
