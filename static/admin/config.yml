@@ -5,6 +5,50 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+x-meta-default: &metaDefault
+  widget: 'string'
+  required: false
+
+x-widget-md-min: &WidgetMDMin
+  widget: 'markdown'
+  buttons: ['italic', 'bold', 'link']
+  minimal: true
+  editorComponents: []
+
+x-meta: &metaAll
+  - label: 'Page Title (browser top bar)'
+    name: 'title'
+    <<: *metaDefault
+  - label: 'Meta Description'
+    name: 'description'
+    <<: *metaDefault
+  - label: 'OpenGraph Image'
+    name: 'og_image'
+    widget: 'image'
+    required: false
+  - label: 'OpenGraph Title'
+    name: 'og_title'
+    <<: *metaDefault
+  - label: 'OpenGraph Description'
+    name: 'og_description'
+    <<: *metaDefault
+  - label: 'Twitter Image'
+    name: 'twitter_image'
+    widget: 'image'
+    required: false
+  - label: 'Twitter Title'
+    name: 'twitter_title'
+    <<: *metaDefault
+  - label: 'Twitter Description'
+    name: 'twitter_description'
+    <<: *metaDefault
+  - label: 'Published at'
+    name: 'published_at'
+    widget: 'datetime'
+  - label: 'Updated at'
+    name: 'updated_at'
+    widget: 'datetime'
+
 # Collections https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
   - label: Settings
@@ -13,27 +57,42 @@ collections:
       - label: General
         name: general
         format: 'frontmatter'
-        file: 'content/settings/general.md'
+        file: 'content/settings/site-settings.md'
+        editor:
+          preview: false
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: 'Title Template', name: titleTemplate, widget: string }
-          - { label: 'Welcome Text', name: welcomeText, widget: markdown }
-          - { label: Logo, name: logo, widget: image }
-          - { label: Icon, name: icon, widget: image }
-          - { label: 'Loading Color', name: loadingColor, widget: string, default: '#000000' }
-          - { label: 'SEO Description', name: seoDescription, widget: text, required: false }
-          - { label: 'SEO Meta Image', name: seoMetaImage, widget: image, required: false }
-      - label: Manifest
-        name: manifest
-        format: 'frontmatter'
-        file: 'content/settings/manifest.md'
-        fields:
-          - { label: Name, name: name, widget: string }
-          - { label: 'Short name', name: shortName, widget: string }
-          - { label: Description, name: description, widget: text }
-          - { label: 'Theme color', name: themeColor, widget: string }
-          - { label: 'Background color', name: backgroundColor, widget: string }
-          - { label: Lang, name: lang, widget: string, default: en }
+          - label: Logo
+            name: logo
+            widget: image
+          - label: 'Top Navigation Menu buttons'
+            name: 'navigation'
+            widget: 'list'
+            summary: '{{fields.label}}: {{fields.url}}'
+            fields:
+              - label: 'Label Anchor'
+                name: label
+                widget: string
+                default: ''
+              - label: 'URL excluding stellarnurse.com'
+                name: url
+                widget: string
+                default: '/'
+          - label: 'Facebook Page slug (not url)'
+            name: 'facebook'
+            widget: 'string'
+          - label: 'Twitter @username (not URL)'
+            name: 'twitter'
+            widget: 'string'
+          - label: 'Instagram @username (not URL)'
+            name: 'instagram'
+            widget: 'string'
+          - label: 'Footer text'
+            name: 'footerText'
+            widget: 'string'
+          - label: 'Meta Data Defaults'
+            name: 'meta'
+            widget: 'object'
+            fields: *metaAll
 
   - name: 'pages'
     label: 'Pages'
@@ -48,6 +107,7 @@ collections:
       - { label: 'Featured Image', name: featuredImage, widget: image, required: false }
       - { label: 'SEO Description', name: seoDescription, widget: text, required: false }
       - { label: 'SEO Meta Image', name: seoMetaImage, widget: image, required: false }
+
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
