@@ -56,7 +56,7 @@ collections:
     files:
       - label: General
         name: general
-        format: 'frontmatter'
+        format: 'json'
         file: 'content/settings/site-settings.md'
         editor:
           preview: false
@@ -102,7 +102,7 @@ collections:
     folder: 'content/pages'
     create: true
     slug: '{{slug}}'
-    format: 'frontmatter'
+    format: 'json'
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: text, required: false }
@@ -116,7 +116,7 @@ collections:
     folder: 'content/blog'
     create: true
     slug: '{{slug}}'
-    format: 'frontmatter'
+    format: 'json'
     sort: 'published_at:desc'
     fields:
       - { label: Title, name: title, widget: string }
