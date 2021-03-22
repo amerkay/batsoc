@@ -12,6 +12,11 @@
     {
       "label": "What do we do?",
       "url": "/#what-do-we-do"
+    },
+    {
+      "label": "Donate via Patreon",
+      "url": "https://www.patreon.com/charlimarie",
+      "is_on_left": true
     }
   ],
   "facebook": "BATSOCinc",
