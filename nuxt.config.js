@@ -14,6 +14,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        hid: 'netlify-identity-widget',
+        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+        defer: true,
+      },
+    ],
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
