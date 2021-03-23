@@ -64,23 +64,33 @@ collections:
           - label: Logo
             name: logo
             widget: image
+          - label: "Profile"
+            name: "nav_left_button"
+            widget: "object"
+            summary: '{{fields.label}}: {{fields.url}}'
+            fields:
+              - label: 'Anchor Text'
+                name: label
+                widget: string
+                default: ''
+              - label: 'URL excluding batsoc.com.au'
+                name: url
+                widget: string
+                default: '/'
           - label: 'Top Navigation Menu buttons'
             name: 'navigation'
             widget: 'list'
             summary: '{{fields.label}}: {{fields.url}}'
             fields:
-              - label: 'Label Anchor'
+              - label: 'URL Anchor'
                 name: label
                 widget: string
                 default: ''
-              - label: 'URL excluding stellarnurse.com'
+              - label: 'URL excluding batsoc.com.au'
                 name: url
                 widget: string
                 default: '/'
-              - label: 'Show this on left?'
-                name: is_on_left
-                widget: boolean
-                default: false
+              
           - label: 'Facebook Page slug (not url)'
             name: 'facebook'
             widget: 'string'
