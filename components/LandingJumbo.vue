@@ -45,7 +45,7 @@
       >
         <img
           class="absolute inset-0 object-cover w-full h-full"
-          src="../static/img/fox1.webp"
+          src="../static/img/fox5.webp"
           alt=""
         />
       </div>
