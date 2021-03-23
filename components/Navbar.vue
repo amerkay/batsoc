@@ -7,14 +7,14 @@
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <a href="#">
             <span class="sr-only">BatSoc</span>
-            <logo class="w-auto h-8 sm:h-20" />
+            <logo class="w-auto h-10 sm:h-16" />
           </a>
         </div>
 
         <div class="-my-2 -mr-2 md:hidden">
           <button
             type="button"
-            class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
             aria-expanded="false"
             @click="mobileNavOpen = true"
           >
@@ -53,7 +53,7 @@
         <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
           <a
             :href="siteSettings.nav_left_button.url"
-            class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:bg-indigo-700"
+            class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:bg-orange-700"
             @click="mobileNavOpen = false"
           >
             {{ siteSettings.nav_left_button.label }}
@@ -82,12 +82,12 @@
         <div class="px-5 pt-5 pb-6">
           <div class="flex items-center justify-between">
             <div>
-              <logo class="w-auto h-8" />
+              <logo class="w-auto h-10" />
             </div>
             <div class="-mr-2">
               <button
                 type="button"
-                class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
                 @click="mobileNavOpen = false"
               >
                 <span class="sr-only">Close menu</span>
@@ -130,7 +130,7 @@
           <div>
             <a
               :href="siteSettings.nav_left_button.url"
-              class="flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
+              class="flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md shadow-sm hover:bg-orange-700"
             >
               {{ siteSettings.nav_left_button.label }}
             </a>

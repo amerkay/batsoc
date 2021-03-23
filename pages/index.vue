@@ -9,7 +9,7 @@
             class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl"
           >
             <span class="block xl:inline">Data to enrich your</span>
-            <span class="block text-indigo-600 xl:inline">online business</span>
+            <span class="block text-orange-600 xl:inline">online business</span>
           </h1>
           <p
             class="max-w-md mx-auto mt-3 text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl"
@@ -22,7 +22,7 @@
             <div class="rounded-md shadow">
               <a
                 href="#"
-                class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md hover:bg-orange-700 md:py-4 md:text-lg md:px-10"
               >
                 Get started
               </a>
@@ -30,7 +30,7 @@
             <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
               <a
                 href="#"
-                class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-indigo-600 bg-white border border-transparent rounded-md hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-orange-600 bg-white border border-transparent rounded-md hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
               >
                 Live demo
               </a>
