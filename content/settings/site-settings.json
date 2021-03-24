@@ -6,12 +6,12 @@
   "logo": "/img/logo.png",
   "navigation": [
     {
-      "label": "Home",
-      "url": "/"
-    },
-    {
       "label": "What do we do?",
       "url": "/#what-do-we-do"
+    },
+    {
+      "label": "Our Team",
+      "url": "/#team"
     }
   ],
   "facebook": "BATSOCinc",

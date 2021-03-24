@@ -53,7 +53,7 @@
         <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
           <a
             :href="siteSettings.nav_left_button.url"
-            class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:bg-orange-700"
+            class="btn btn-primary"
             @click="mobileNavOpen = false"
           >
             {{ siteSettings.nav_left_button.label }}
@@ -128,10 +128,7 @@
         </div>
         <div class="px-5 py-6 space-y-6">
           <div>
-            <a
-              :href="siteSettings.nav_left_button.url"
-              class="flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md shadow-sm hover:bg-orange-700"
-            >
+            <a :href="siteSettings.nav_left_button.url" class="btn btn-primary">
               {{ siteSettings.nav_left_button.label }}
             </a>
           </div>

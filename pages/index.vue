@@ -3,7 +3,13 @@
     <landing-jumbo />
     <landing-logo-cloud />
 
-    <landing-section-header />
+    <landing-section-header
+      id="what-do-we-do"
+      h2="Raising awareness and advocating"
+      heading="What do we do?"
+      subHeading="Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
+      voluptatum cupiditate veritatis in accusamus quisquam."
+    />
     <landing-feature
       heading="Founding member of the Spectacled Flying Fox Recovery Team"
       :is-img-on-left="true"
@@ -20,8 +26,13 @@
       img="fox9.jpg"
     />
 
-    <LandingCTA />
-    <landing-team />
+    <LandingCTA class="mt-16" />
+
+    <landing-events />
+
+    <LandingFAQ id="FAQ" />
+
+    <landing-team id="team" />
   </div>
 </template>
 

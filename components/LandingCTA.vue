@@ -1,6 +1,6 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <div class="relative mt-16 bg-navy-500">
+  <div class="relative bg-navy-500">
     <div
       class="h-56 bg-navy-500 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2"
     >
@@ -30,12 +30,7 @@
         </p>
         <div class="mt-8">
           <div class="inline-flex rounded-md shadow">
-            <a
-              href="#"
-              class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md hover:bg-orange-700 md:py-4 md:text-lg md:px-10"
-            >
-              Join us on Patreon
-            </a>
+            <a href="#" class="btn btn-primary btn-lg"> Join us on Patreon </a>
           </div>
         </div>
       </div>

@@ -18,13 +18,12 @@
                 Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis
                 bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet
                 sagittis viverra duis. In venenatis sem arcu pretium pharetra
-                at. Lectus viverra dui tellus ornare pharetra.
+                at. Lectus viverra dui tellus ornare pharetra. In venenatis sem
+                arcu pretium pharetra at. Lectus viverra dui tellus ornare
+                pharetra.
               </p>
               <div class="mt-6">
-                <a
-                  href="#"
-                  class="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-navy-500 hover:bg-navy-700"
-                >
+                <a href="#" class="btn btn-secondary btn-outline">
                   Learn more
                 </a>
               </div>

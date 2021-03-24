@@ -21,21 +21,16 @@
             working with locals legislators to protect them.
           </p>
           <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-            <div class="rounded-md shadow">
-              <a
-                href="#"
-                class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-orange-600 border border-transparent rounded-md hover:bg-orange-700 md:py-4 md:text-lg md:px-10"
-              >
+            <div class="mr-2">
+              <a href="#" class="btn btn-lg btn-primary">
                 Join us on Patreon
               </a>
             </div>
-            <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-              <a
-                href="#"
-                class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-gray-100 bg-transparent border border-gray-100 rounded-md hover:bg-navy-700 md:py-4 md:text-lg md:px-10"
-              >
+
+            <div>
+              <nuxt-link to="/#what-do-we-do" class="btn btn-outline btn-lg">
                 Learn more about us
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>
