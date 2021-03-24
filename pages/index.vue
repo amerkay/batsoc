@@ -6,9 +6,9 @@
 
     <LandingCTA class="mt-16" />
 
-    <landing-events />
+    <landing-events id="events" />
 
-    <LandingFAQ id="FAQ" />
+    <LandingFAQ id="faq" />
 
     <landing-team id="team" />
   </div>

@@ -27,6 +27,14 @@
             Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat
             eu faucibus vivamus eget bibendum cras.
           </p>
+
+          <div class="flex justify-start pt-4">
+            <img
+              class="h-64"
+              src="../static/img/logo-orig-512.png"
+              alt="BatSoc Logo"
+            />
+          </div>
         </div>
         <div class="lg:col-span-2">
           <ul

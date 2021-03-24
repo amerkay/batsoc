@@ -10,6 +10,14 @@
       "url": "/#what-do-we-do"
     },
     {
+      "label": "Upcoming Events",
+      "url": "/#events"
+    },
+    {
+      "label": "FAQ",
+      "url": "/#faq"
+    },
+    {
       "label": "Our Team",
       "url": "/#team"
     }

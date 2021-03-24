@@ -138,7 +138,7 @@ collections:
                 default: ''
               - label: 'More Information Text'
                 name: text
-                widget: string
+                widget: text
                 default: ''
               - label: 'Button Text'
                 name: btnLabel
