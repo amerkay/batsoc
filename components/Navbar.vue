@@ -7,7 +7,7 @@
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <a href="#">
             <span class="sr-only">BatSoc</span>
-            <logo class="w-auto h-10 sm:h-16" />
+            <logo class="h-12 sm:h-16" />
           </a>
         </div>
 
@@ -82,7 +82,7 @@
         <div class="px-5 pt-5 pb-6">
           <div class="flex items-center justify-between">
             <div>
-              <logo class="w-auto h-10" />
+              <logo class="h-12" />
             </div>
             <div class="-mr-2">
               <button
