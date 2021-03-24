@@ -8,32 +8,26 @@
           <h1
             class="text-4xl font-extrabold tracking-tight text-gray-100 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl"
           >
-            <span class="block xl:inline"> Help us save the endangered </span>
+            <span class="block xl:inline"> {{ cData.h1Line1 }} </span>
             <span class="block text-orange-500 xl:inline">
-              Spectacled Flying Fox!
+              {{ cData.h1Line2 }}
             </span>
           </h1>
+
           <p
             class="max-w-md mx-auto mt-3 text-lg text-gray-200 sm:text-xl md:mt-5 md:max-w-3xl"
           >
-            Help us save the endangered Spectacled Flying Fox, an essential
-            pollinator and seed disperser for the wet tropics! We are volunteers
-            working with locals legislators to protect them.
+            {{ cData.subHeading }}
           </p>
           <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-            <div class="mt-3 mr-2">
-              <a href="#" class="btn btn-lg btn-primary">
-                Join us on Patreon
-              </a>
-            </div>
-
-            <div>
-              <nuxt-link
-                to="/#what-do-we-do"
-                class="mt-3 mr-2 btn btn-outline btn-lg"
+            <div class="mt-3 mr-2" v-for="btn in cData.buttons" :key="btn.url">
+              <a
+                :href="btn.url"
+                class="btn btn-lg"
+                :class="[btn.isPrimary ? 'btn-primary' : 'btn-outline']"
               >
-                Learn more about us
-              </nuxt-link>
+                {{ btn.label }}
+              </a>
             </div>
           </div>
         </div>
@@ -43,10 +37,24 @@
       >
         <img
           class="absolute inset-0 object-cover w-full h-full"
-          src="../static/img/fox5.webp"
+          :src="cData.img"
           alt=""
         />
       </div>
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    cData: {
+      type: Object,
+      required: true,
+    },
+  },
+  mounted() {
+    console.log('---> ', this.cData)
+  },
+}
+</script>

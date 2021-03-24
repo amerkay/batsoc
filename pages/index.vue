@@ -1,30 +1,8 @@
 <template>
   <div>
-    <landing-jumbo />
-    <landing-logo-cloud />
-
-    <landing-section-header
-      id="what-do-we-do"
-      h2="Raising awareness and advocating"
-      heading="What do we do?"
-      subHeading="Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
-      voluptatum cupiditate veritatis in accusamus quisquam."
-    />
-    <landing-feature
-      heading="Founding member of the Spectacled Flying Fox Recovery Team"
-      :is-img-on-left="true"
-      img="fox2.jpg"
-    />
-    <landing-feature
-      heading="We work with local rescue groups, other recovery teams"
-      :is-img-on-left="false"
-      img="fox4.jpg"
-    />
-    <landing-feature
-      heading="Community and school education"
-      :is-img-on-left="true"
-      img="fox9.jpg"
-    />
+    <landing-hero :cData="heroData" />
+    <landing-logo-cloud :cData="logoCloudData" />
+    <landing-features :cData="featuresData" />
 
     <LandingCTA class="mt-16" />
 
@@ -37,7 +15,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $content }) {
+    const heroData = await $content('landing-page/hero').fetch()
+    const logoCloudData = await $content('landing-page/logo-cloud').fetch()
+    const featuresData = await $content('landing-page/features').fetch()
+
+    return {
+      heroData,
+      logoCloudData,
+      featuresData,
+    }
+  },
+}
 </script>
 
 

@@ -15,16 +15,11 @@
                 {{ heading }}
               </h2>
               <p class="mt-4 text-lg text-gray-500">
-                Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis
-                bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet
-                sagittis viverra duis. In venenatis sem arcu pretium pharetra
-                at. Lectus viverra dui tellus ornare pharetra. In venenatis sem
-                arcu pretium pharetra at. Lectus viverra dui tellus ornare
-                pharetra.
+                {{ text }}
               </p>
               <div class="mt-6">
-                <a href="#" class="btn btn-secondary btn-outline">
-                  Learn more
+                <a :href="btnUrl" class="btn btn-secondary btn-outline">
+                  {{ btnLabel }}
                 </a>
               </div>
             </div>
@@ -40,8 +35,8 @@
             <img
               class="w-full rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
               :class="[isImgOnLeft ? 'right-0' : 'left-0']"
-              :src="require(`@/static/img/${img}`)"
-              alt="Inbox user interface"
+              :src="img"
+              :alt="heading"
             />
           </div>
         </div>
@@ -64,6 +59,17 @@ export default {
     heading: {
       type: String,
       required: true,
+    },
+    text: {
+      type: String,
+    },
+    btnLabel: {
+      type: String,
+      default: 'Learn more',
+    },
+    btnUrl: {
+      type: String,
+      default: '#',
     },
   },
 }

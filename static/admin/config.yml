@@ -51,6 +51,106 @@ x-meta: &metaAll
 
 # Collections https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
+  - label: Landing Page
+    name: landing-page
+    files:
+      - label: Hero Section
+        name: hero
+        format: 'json'
+        file: 'content/landing-page/hero.json'
+        editor:
+          preview: false
+        fields:
+          - label: Large Heading Text Line 1
+            name: h1Line1
+            widget: string
+          - label: Large Heading Text Line 2
+            name: h1Line2
+            widget: string
+          - label: Sub-Heading Text
+            name: subHeading
+            widget: string
+          - label: 'Buttons'
+            name: 'buttons'
+            widget: 'list'
+            summary: '{{fields.label}}: {{fields.url}}'
+            fields:
+              - label: 'Button Text'
+                name: label
+                widget: string
+                default: ''
+              - label: 'URL excluding batsoc.org.au'
+                name: url
+                widget: string
+                default: '/'
+              - label: 'Primary Button?'
+                name: isPrimary
+                widget: boolean
+                default: false
+          - label: Hero Image
+            name: img
+            widget: image
+
+      - label: Logo Cloud Section
+        name: logo-cloud
+        format: 'json'
+        file: 'content/landing-page/logo-cloud.json'
+        editor:
+          preview: false
+        fields:
+          - label: 'Logos'
+            name: 'logos'
+            widget: 'list'
+            summary: '{{fields.img}}: {{fields.a;t}}'
+            fields:
+              - label: 'Logo Image (must be png or svg transparent)'
+                name: img
+                widget: image
+              - label: 'Logo Text (what Org is this logo for?)'
+                name: alt
+                widget: string
+                default: ''
+
+      - label: What We Do Section
+        name: features
+        format: 'json'
+        file: 'content/landing-page/features.json'
+        editor:
+          preview: false
+        fields:
+          - label: Heading Text Line 1
+            name: h2
+            widget: string
+          - label: Heading Text Line 2 (Large text)
+            name: heading
+            widget: string
+          - label: Sub-Heading Text
+            name: subHeading
+            widget: string
+          - label: 'What we do sub-sections'
+            name: 'subSections'
+            widget: 'list'
+            summary: '{{fields.heading}}: {{fields.label}}, {{fields.url}}'
+            fields:
+              - label: 'Heading Text'
+                name: heading
+                widget: string
+                default: ''
+              - label: 'More Information Text'
+                name: text
+                widget: string
+                default: ''
+              - label: 'Button Text'
+                name: btnLabel
+                widget: string
+                default: 'Learn more'
+              - label: 'URL excluding batsoc.org.au'
+                name: btnUrl
+                widget: string
+                default: '/'
+              - label: Image
+                name: img
+                widget: image
   - label: Settings
     name: settings
     files:
@@ -73,7 +173,7 @@ collections:
                 name: label
                 widget: string
                 default: ''
-              - label: 'URL excluding batsoc.com.au'
+              - label: 'URL excluding batsoc.org.au'
                 name: url
                 widget: string
                 default: '/'
@@ -86,7 +186,7 @@ collections:
                 name: label
                 widget: string
                 default: ''
-              - label: 'URL excluding batsoc.com.au'
+              - label: 'URL excluding batsoc.org.au'
                 name: url
                 widget: string
                 default: '/'
