@@ -21,14 +21,17 @@
             working with locals legislators to protect them.
           </p>
           <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-            <div class="mr-2">
+            <div class="mt-3 mr-2">
               <a href="#" class="btn btn-lg btn-primary">
                 Join us on Patreon
               </a>
             </div>
 
             <div>
-              <nuxt-link to="/#what-do-we-do" class="btn btn-outline btn-lg">
+              <nuxt-link
+                to="/#what-do-we-do"
+                class="mt-3 mr-2 btn btn-outline btn-lg"
+              >
                 Learn more about us
               </nuxt-link>
             </div>
