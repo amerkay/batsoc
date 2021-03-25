@@ -11,11 +11,17 @@
  **   Colors: navy-500, orange-500, green-200
  */
 
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   // Extends the default Studio Meta Tailwind configuration here...
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      // to change or add fonts, see also nuxt.config.js -> webfontloader
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         navy: {
           50: '#f3f5f7',

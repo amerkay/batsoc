@@ -47,7 +47,15 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // Doc: https://github.com/Developmint/nuxt-webfontloader
+    'nuxt-webfontloader',
   ],
+
+  webfontloader: {
+    google: {
+      families: ['Inter:400,700,900&display=swap'], // Loads Lato font with weights 400 and 700
+    },
+  },
 
   // tailwindcss: {
   //   // configPath: '~/tailwind.config.js',
