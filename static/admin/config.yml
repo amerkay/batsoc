@@ -11,7 +11,7 @@ x-meta-default: &metaDefault
 
 x-widget-md-min: &WidgetMDMin
   widget: 'markdown'
-  buttons: ['italic', 'bold', 'link']
+  buttons: ['italic', 'bold', 'link', 'heading-three', 'heading-four', 'bulleted-list', 'numbered-list']
   minimal: true
   editorComponents: []
 
@@ -204,46 +204,34 @@ collections:
             name: subHeading
             widget: string
 
-      # - label: What We Do Section
-      #   name: features
-      #   format: 'json'
-      #   file: 'content/landing-page/features.json'
-      #   editor:
-      #     preview: false
-      #   fields:
-      #     - label: Heading Text Line 1
-      #       name: h2
-      #       widget: string
-      #     - label: Heading Text Line 2 (Large text)
-      #       name: heading
-      #       widget: string
-      #     - label: Sub-Heading Text
-      #       name: subHeading
-      #       widget: string
-      #     - label: 'What we do sub-sections'
-      #       name: 'subSections'
-      #       widget: 'list'
-      #       summary: '{{fields.heading}}: {{fields.label}}, {{fields.url}}'
-      #       fields:
-      #         - label: 'Heading Text'
-      #           name: heading
-      #           widget: string
-      #           default: ''
-      #         - label: 'More Information Text'
-      #           name: text
-      #           widget: text
-      #           default: ''
-      #         - label: 'Button Text'
-      #           name: btnLabel
-      #           widget: string
-      #           default: 'Learn more'
-      #         - label: 'URL excluding batsoc.org.au'
-      #           name: btnUrl
-      #           widget: string
-      #           default: '/'
-      #         - label: Image
-      #           name: img
-      #           widget: image
+      - label: Frequently Asked Questions Section
+        name: faq
+        format: 'json'
+        file: 'content/landing-page/faq.json'
+        editor:
+          preview: false
+        fields:
+          - label: Heading Text Line 1
+            name: h2
+            widget: string
+          - label: Heading Text Line 2 (Large text)
+            name: heading
+            widget: string
+          - label: Sub-Heading Text
+            name: subHeading
+            widget: string
+          - label: 'The Questions'
+            name: 'questions'
+            widget: 'list'
+            summary: '{{fields.question}}'
+            fields:
+              - label: 'FAQ Question'
+                name: question
+                widget: string
+              - label: 'FAQ Answer'
+                name: answer
+                <<: *WidgetMDMin
+                
           
           
 
