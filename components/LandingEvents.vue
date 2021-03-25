@@ -8,7 +8,7 @@
         :subHeading="headingData.subHeading"
       />
       <div
-        class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none"
+        class="grid max-w-lg gap-5 mx-auto mt-12 auto-rows-max lg:grid-cols-3 lg:max-w-none"
       >
         <div
           v-for="event in getFutureEvents()"
@@ -18,7 +18,7 @@
           <div class="flex-shrink-0">
             <img
               class="object-cover w-full h-48"
-              src="../static/img/fox1.webp"
+              :src="event.img ? event.img : require('~/static/img/fox1.webp')"
               alt=""
             />
           </div>

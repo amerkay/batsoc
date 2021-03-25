@@ -35,7 +35,6 @@ export default {
     var eventsData = await $content('events')
       .sortBy('eventAt', 'desc')
       .limit(10)
-      .sortBy('eventAt', 'asc')
       .fetch()
       .catch((err) => {
         console.error('Cannot load events')

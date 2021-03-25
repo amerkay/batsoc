@@ -41,7 +41,7 @@
 export default {
   props: {
     cData: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },
