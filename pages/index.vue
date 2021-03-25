@@ -1,12 +1,12 @@
 <template>
   <div>
     <landing-hero :cData="heroData" />
-    <landing-logo-cloud :cData="logoCloudData" />
+    <!-- <landing-logo-cloud :cData="logoCloudData" /> -->
     <landing-features :cData="featuresData" />
 
     <LandingCTA class="mt-16" />
 
-    <landing-events id="events" :cData="eventsData" />
+    <landing-events id="events || []" :cData="eventsData" />
 
     <LandingFAQ id="faq" />
 
@@ -18,14 +18,13 @@
 export default {
   async asyncData({ $content }) {
     const heroData = await $content('landing-page/hero').fetch()
-    const logoCloudData = await $content('landing-page/logo-cloud').fetch()
+    // const logoCloudData = await $content('landing-page/logo-cloud').fetch()
     const featuresData = await $content('landing-page/features').fetch()
+
+    // const now = process.server ? new Date().valueOf() : new Date().toJSON()
     const eventsData = await $content('events')
-      .sortBy('event_at', 'asc')
+      // .sortBy('event_at', 'asc')
       .limit(6)
-      // .where({
-      //   event_at: { $gt: new Date('2020-03-31') },
-      // })
       .fetch()
       .catch((err) => {
         console.error('Cannot load events')
@@ -35,7 +34,7 @@ export default {
 
     return {
       heroData,
-      logoCloudData,
+      // logoCloudData,
       featuresData,
       eventsData,
     }
