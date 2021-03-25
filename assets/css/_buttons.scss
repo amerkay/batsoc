@@ -46,7 +46,7 @@
   }
   &:focus,
   &:active {
-    @apply border-navy-300 text-gray-500; //  shadow-outline-navy
+    @apply border-navy-300 text-gray-300; //  shadow-outline-navy
   }
 
   &.btn-primary {

@@ -28,7 +28,13 @@
             <div class="flex-1">
               <p class="flex items-center text-sm text-gray-500">
                 <calendar-icon class="w-5 h-5 mr-2"></calendar-icon>
-                25 May 2021 @ 16:30
+                25 May 2021 @ 16:30 or
+                <span
+                  class="ml-1"
+                  title="If you set the date to 2099, it becomes 'Ongoing'. You can use for hiring Volonteers."
+                >
+                  Ongoing</span
+                >
               </p>
 
               <p class="flex items-center mt-3 text-sm text-gray-500">
@@ -56,6 +62,9 @@
         </div>
       </div>
     </div>
+
+    <landing-section-header id="events" h2="Past Bat Society Events" />
+    <landing-events-past class="max-w-2xl mx-auto mt-8" />
   </div>
 </template>
 
