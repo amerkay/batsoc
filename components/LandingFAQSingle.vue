@@ -7,7 +7,7 @@
         @click="isOpen = !isOpen"
       >
         <span class="font-medium text-gray-900">
-          What's the best thing about Flying Foxes?
+          {{ question }}
         </span>
         <span class="flex items-center ml-6 h-7">
           <!--
@@ -23,8 +23,7 @@
     </dt>
     <dd class="pr-12 mt-2" v-show="isOpen">
       <p class="text-base text-gray-500">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate
-        laboriosam fugiat.
+        {{ answer }}
       </p>
     </dd>
   </div>
@@ -33,6 +32,16 @@
 <script>
 import { ChevronDownIcon } from 'vue-feather-icons'
 export default {
+  props: {
+    question: {
+      type: String,
+      required: true,
+    },
+    answer: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       isOpen: false,

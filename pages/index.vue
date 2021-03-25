@@ -12,7 +12,7 @@
       :headingData="eventsHeadingData"
     />
 
-    <LandingFAQ id="faq" />
+    <LandingFAQ id="faq" :cData="faqData" />
 
     <landing-team id="team" />
   </div>
@@ -41,6 +41,8 @@ export default {
       })
     eventsData = eventsData.reverse()
 
+    const faqData = await $content('landing-page/faq').fetch()
+
     return {
       heroData,
       // logoCloudData,
@@ -48,6 +50,7 @@ export default {
       cta1Data,
       eventsHeadingData,
       eventsData,
+      faqData,
     }
   },
 }
