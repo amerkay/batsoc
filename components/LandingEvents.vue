@@ -9,12 +9,12 @@
         subHeading="Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
       voluptatum cupiditate veritatis in accusamus quisquam."
       />
-      <div
+      <!-- <div
         class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none"
       >
         <div
-          v-for="i in [1, 2, 3]"
-          :key="i"
+          v-for="event in events"
+          :key="event.slug"
           class="flex flex-col overflow-hidden rounded-lg shadow-lg"
         >
           <div class="flex-shrink-0">
@@ -60,7 +60,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <landing-section-header id="events" h2="Past Bat Society Events" />
@@ -71,6 +71,12 @@
 <script>
 import { CalendarIcon, MapPinIcon } from 'vue-feather-icons'
 export default {
+  props: {
+    cData: {
+      type: Array,
+      required: true,
+    },
+  },
   components: {
     CalendarIcon,
     MapPinIcon,

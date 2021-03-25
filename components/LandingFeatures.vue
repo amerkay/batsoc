@@ -28,8 +28,5 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log(this.cData.subSections)
-  },
 }
 </script>
