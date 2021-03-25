@@ -49,6 +49,8 @@ export default {
     '@nuxt/content',
     // Doc: https://github.com/Developmint/nuxt-webfontloader
     'nuxt-webfontloader',
+    // Doc https://github.com/nuxt-community/dayjs-module
+    '@nuxtjs/dayjs',
   ],
 
   webfontloader: {

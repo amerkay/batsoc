@@ -224,11 +224,9 @@ collections:
         name: 'eventAt'
         required: true
         widget: "datetime"
-        # default: ""
         date_format: "YYYY-MM-DD" # e.g. 24.12.2021
         time_format: "HH:mm" # e.g. 21:07
-        format: "LLL"
-        picker_utc: true
+        format: "YYYY-MM-DDTHH:mm:ss.sssZ"
       - label: 'Event Location'
         hint: '(optional) Enter a location to display (17 X Drive, Kuranda, QLD, Australia). Write in the country for international audience. Or in case traveling in the future.'
         name: 'location'

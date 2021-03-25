@@ -23,8 +23,7 @@ export default {
 
     // const now = process.server ? new Date().valueOf() : new Date().toJSON()
     const eventsData = await $content('events')
-      // .sortBy('event_at', 'asc')
-      .limit(6)
+      .sortBy('eventAt', 'asc')
       .fetch()
       .catch((err) => {
         console.error('Cannot load events')
