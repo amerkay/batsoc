@@ -70,6 +70,25 @@ export default {
     ],
   },
 
+  hooks: {
+    // Doc: https://content.nuxtjs.org/advanced#contentfilebeforeinsert
+    'content:file:beforeInsert': async (document, database) => {
+      // search for markdown containing
+      // only `specialNotice` property.
+      if (
+        document.extension === '.json' &&
+        document.questions &&
+        document.questions.length > 0
+      ) {
+        document.questions.forEach(async (q) => {
+          // Replace Markdown string in database
+          // with the JSON ATS version
+          q.answer = await database.markdown.toJSON(q.answer)
+        })
+      }
+    },
+  },
+
   // tailwindcss: {
   //   // configPath: '~/tailwind.config.js',
   //   // cssPath: '~/assets/css/main.scss',

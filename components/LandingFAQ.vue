@@ -15,6 +15,7 @@
             :key="q.question"
             :question="q.question"
             :answer="q.answer"
+            :cData="cData"
           />
         </dl>
       </div>

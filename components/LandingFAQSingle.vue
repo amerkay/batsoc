@@ -22,9 +22,7 @@
       </button>
     </dt>
     <dd class="pr-12 mt-2" v-show="isOpen">
-      <p class="text-base text-gray-500">
-        {{ answer }}
-      </p>
+      <NuxtContent :document="answer" class="text-base prose text-gray-500" />
     </dd>
   </div>
 </template>
@@ -38,7 +36,11 @@ export default {
       required: true,
     },
     answer: {
-      type: String,
+      type: Object,
+      required: true,
+    },
+    cData: {
+      type: Object,
       required: true,
     },
   },
