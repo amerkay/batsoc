@@ -3,11 +3,9 @@
   <div class="relative px-4 pb-20 bg-white sm:px-6 lg:pb-28 lg:px-8">
     <div class="relative mx-auto max-w-7xl">
       <landing-section-header
-        id="events"
-        h2="Learn about Flying Fox and volunteer"
-        heading="Upcoming Events"
-        subHeading="Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
-      voluptatum cupiditate veritatis in accusamus quisquam."
+        :h2="headingData.h2"
+        :heading="headingData.heading"
+        :subHeading="headingData.subHeading"
       />
       <div
         class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none"
@@ -28,33 +26,32 @@
             <div class="flex-1">
               <p class="flex items-center text-sm text-gray-500">
                 <calendar-icon class="w-5 h-5 mr-2"></calendar-icon>
-                25 May 2021 @ 16:30 or
-                <span
+                {{ getDateFormatted(event.eventAt) }}
+                <!-- <span
                   class="ml-1"
                   title="If you set the date to 2099, it becomes 'Ongoing'. You can use for hiring Volonteers."
                 >
                   Ongoing</span
-                >
+                > -->
               </p>
 
-              <p class="flex items-center mt-3 text-sm text-gray-500">
+              <p
+                class="flex items-center mt-3 text-sm text-gray-500"
+                v-if="event.location"
+              >
                 <map-pin-icon class="w-5 h-5 mr-2"></map-pin-icon>
-                17 Some Street, Kuranda, QLD
+                {{ event.location }}
               </p>
 
-              <a href="#" class="block mt-3">
+              <div class="block mt-3">
                 <p class="text-xl font-semibold text-gray-900">
-                  An awesome Flying Fox Event!
+                  {{ event.title }}
                 </p>
-                <p class="mt-3 text-base text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Architecto accusantium praesentium eius, ut atque fuga culpa,
-                  similique sequi cum eos quis dolorum.
-                </p>
-              </a>
+                <p class="mt-3 text-base text-gray-500">{{ event.excerpt }}</p>
+              </div>
             </div>
-            <div class="flex items-center mt-6">
-              <a href="#" class="w-full btn btn-secondary btn-outline">
+            <div class="flex items-center mt-6" v-if="event.url">
+              <a :href="event.url" class="w-full btn btn-secondary btn-outline">
                 Go to event details
               </a>
             </div>
@@ -63,8 +60,13 @@
       </div>
     </div>
 
-    <landing-section-header id="events" h2="Past Bat Society Events" />
-    <landing-events-past class="max-w-2xl mx-auto mt-8" />
+    <div v-if="getPastEvents().length > 0">
+      <landing-section-header id="events" h2="Past Bat Society Events" />
+      <landing-events-past
+        class="max-w-3xl mx-auto mt-8"
+        :past-events="getPastEvents()"
+      />
+    </div>
   </div>
 </template>
 
@@ -76,6 +78,10 @@ export default {
       type: Array,
       required: true,
     },
+    headingData: {
+      type: Object,
+      required: true,
+    },
   },
   components: {
     CalendarIcon,
@@ -84,14 +90,18 @@ export default {
   methods: {
     getFutureEvents() {
       return this.cData.filter((event) => {
-        console.log(
-          'new Date(event.eventAt)',
-          new Date(event.eventAt),
-          'new Date()',
-          new Date()
-        )
         return new Date(event.eventAt) > new Date()
       })
+    },
+    getPastEvents() {
+      return this.cData.filter((event) => {
+        return new Date(event.eventAt) < new Date()
+      })
+    },
+    getDateFormatted(dateStr) {
+      return this.$dayjs(dateStr)
+        .tz('Australia/Brisbane')
+        .format('dddd, MMMM MM, YYYY HH:mm (Z)')
     },
   },
 }

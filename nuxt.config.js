@@ -59,6 +59,17 @@ export default {
     },
   },
 
+  dayjs: {
+    locales: ['en'],
+    defaultLocale: 'en',
+    defaultTimeZone: 'Australia/Brisbane',
+    plugins: [
+      'utc', // import 'dayjs/plugin/utc'
+      'timezone', // import 'dayjs/plugin/timezone'
+      'localizedFormat',
+    ],
+  },
+
   // tailwindcss: {
   //   // configPath: '~/tailwind.config.js',
   //   // cssPath: '~/assets/css/main.scss',

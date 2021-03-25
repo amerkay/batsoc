@@ -151,6 +151,102 @@ collections:
               - label: Image
                 name: img
                 widget: image
+
+      - label: Call-To-Action (CTA) Section
+        name: cta1
+        format: 'json'
+        file: 'content/landing-page/cta1.json'
+        editor:
+          preview: false
+        fields: 
+          - label: Heading Text Line 1
+            name: h2
+            widget: string
+            required: true
+          - label: Heading Text Line 2 (Large text)
+            name: heading
+            widget: string
+            required: true
+          - label: CTA Text
+            hint: Up to 3-5 short sentences, explaining why they should support us on Patreon
+            name: ctaText
+            widget: text
+            required: true
+          - label: 'Call to Action Button Text'
+            name: btnLabel
+            widget: string
+            default: 'Learn more'
+            required: true
+          - label: 'URL excluding batsoc.org.au'
+            name: btnUrl
+            widget: string
+            default: '/'
+            required: true
+          - label: Image
+            name: img
+            widget: image
+            required: true
+
+      - label: Events Section Heading
+        name: events-heading
+        format: 'json'
+        file: 'content/landing-page/events-heading.json'
+        editor:
+          preview: false
+        fields: 
+          - label: Heading Text Line 1
+            name: h2
+            widget: string
+          - label: Heading Text Line 2 (Large text)
+            name: heading
+            widget: string
+          - label: Sub-Heading Text
+            name: subHeading
+            widget: string
+
+      # - label: What We Do Section
+      #   name: features
+      #   format: 'json'
+      #   file: 'content/landing-page/features.json'
+      #   editor:
+      #     preview: false
+      #   fields:
+      #     - label: Heading Text Line 1
+      #       name: h2
+      #       widget: string
+      #     - label: Heading Text Line 2 (Large text)
+      #       name: heading
+      #       widget: string
+      #     - label: Sub-Heading Text
+      #       name: subHeading
+      #       widget: string
+      #     - label: 'What we do sub-sections'
+      #       name: 'subSections'
+      #       widget: 'list'
+      #       summary: '{{fields.heading}}: {{fields.label}}, {{fields.url}}'
+      #       fields:
+      #         - label: 'Heading Text'
+      #           name: heading
+      #           widget: string
+      #           default: ''
+      #         - label: 'More Information Text'
+      #           name: text
+      #           widget: text
+      #           default: ''
+      #         - label: 'Button Text'
+      #           name: btnLabel
+      #           widget: string
+      #           default: 'Learn more'
+      #         - label: 'URL excluding batsoc.org.au'
+      #           name: btnUrl
+      #           widget: string
+      #           default: '/'
+      #         - label: Image
+      #           name: img
+      #           widget: image
+          
+          
+
   - label: Settings
     name: settings
     files:
@@ -224,9 +320,10 @@ collections:
         name: 'eventAt'
         required: true
         widget: "datetime"
-        date_format: "YYYY-MM-DD" # e.g. 24.12.2021
+        date_format: "DD-MM-YYYY" # e.g. 24.12.2021
         time_format: "HH:mm" # e.g. 21:07
-        format: "YYYY-MM-DDTHH:mm:ss.sssZ"
+        format: "YYYY-MM-DDTHH:mm:ss.sss+10:00"
+        # picker_utc: true
       - label: 'Event Location'
         hint: '(optional) Enter a location to display (17 X Drive, Kuranda, QLD, Australia). Write in the country for international audience. Or in case traveling in the future.'
         name: 'location'

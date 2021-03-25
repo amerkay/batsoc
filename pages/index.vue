@@ -4,9 +4,13 @@
     <!-- <landing-logo-cloud :cData="logoCloudData" /> -->
     <landing-features :cData="featuresData" />
 
-    <LandingCTA class="mt-16" />
+    <LandingCTA :cData="cta1Data" class="mt-16" />
 
-    <landing-events id="events || []" :cData="eventsData" />
+    <landing-events
+      id="events"
+      :cData="eventsData"
+      :headingData="eventsHeadingData"
+    />
 
     <LandingFAQ id="faq" />
 
@@ -21,20 +25,29 @@ export default {
     // const logoCloudData = await $content('landing-page/logo-cloud').fetch()
     const featuresData = await $content('landing-page/features').fetch()
 
+    const cta1Data = await $content('landing-page/cta1').fetch()
+
+    const eventsHeadingData = await $content(
+      'landing-page/events-heading'
+    ).fetch()
+
     // const now = process.server ? new Date().valueOf() : new Date().toJSON()
-    const eventsData = await $content('events')
+    var eventsData = await $content('events')
+      .sortBy('eventAt', 'desc')
+      .limit(10)
       .sortBy('eventAt', 'asc')
       .fetch()
       .catch((err) => {
         console.error('Cannot load events')
       })
-
-    console.log('eventsData ', eventsData)
+    eventsData = eventsData.reverse()
 
     return {
       heroData,
       // logoCloudData,
       featuresData,
+      cta1Data,
+      eventsHeadingData,
       eventsData,
     }
   },
