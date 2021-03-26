@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: static/img
-public_folder: /img
+media_folder: assets/images
+public_folder: '' # we need them saved with no path, just names on the root of /img-cms
 
 x-meta-default: &metaDefault
   widget: 'string'
@@ -13,7 +13,7 @@ x-widget-md-min: &WidgetMDMin
   widget: 'markdown'
   buttons: ['italic', 'bold', 'link', 'heading-three', 'heading-four', 'bulleted-list', 'numbered-list']
   minimal: true
-  editorComponents: []
+  editorComponents: ['image']
 
 x-meta: &metaAll
   - label: 'Page Title (browser top bar)'

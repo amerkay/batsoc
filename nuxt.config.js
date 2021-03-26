@@ -35,14 +35,6 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-    // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
-  ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
@@ -52,6 +44,24 @@ export default {
     // Doc https://github.com/nuxt-community/dayjs-module
     '@nuxtjs/dayjs',
   ],
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    // https://go.nuxtjs.dev/stylelint
+    '@nuxtjs/stylelint-module',
+    // Doc: https://github.com/juliomrqz/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
+    // Doc: https://github.com/ivodolenc/nuxt-lazysizes
+    'nuxt-lazysizes',
+  ],
+
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: false,
+    inlineImageLimit: 5000,
+  },
 
   webfontloader: {
     google: {
