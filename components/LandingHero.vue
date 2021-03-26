@@ -39,7 +39,7 @@
           img-class="absolute inset-0 w-full h-full"
           :src="cData.img"
           :alt="`${cData.h1Line1} ${cData.h1Line2}`"
-          size="lg"
+          size="md"
         />
       </div>
     </main>
