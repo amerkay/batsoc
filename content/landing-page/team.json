@@ -1,0 +1,15 @@
+{
+  "aboutText": " Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras. ",
+  "members": [
+    {
+      "name": "Maree Treadwell Kerr",
+      "title": "President",
+      "desc": " Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum. ",
+      "img": "https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixqx=PguZ6clds6&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+      "twitter": "mareetreadwellk",
+      "instagram": "mareetreadwellk",
+      "websiteUrl": "https://something.com"
+    }
+  ],
+  "h2": "Our Team"
+}
