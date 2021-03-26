@@ -8,7 +8,7 @@
     />
     <img
       class="ml-3 h-3/5 md:h-2/5"
-      src="../static/img/logo-text.svg"
+      src="../static/logo-text.svg"
       alt="BatSoc Logo Text"
     />
   </div>

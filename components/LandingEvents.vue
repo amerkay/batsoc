@@ -18,7 +18,7 @@
           <div class="flex-shrink-0">
             <base-img
               img-class="w-full h-48"
-              :src="event.img ? event.img : 'fox1.jpg'"
+              :src="event.img ? event.img : '/img/fox1.jpg'"
               :alt="event.title"
               size="md"
             />

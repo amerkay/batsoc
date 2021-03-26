@@ -10,7 +10,7 @@
   <!-- For SVGs no img-class can be used, just class -->
   <div
     v-else-if="isSVG()"
-    v-html="require('~/assets/images/' + stripExtension(src) + '.svg?include')"
+    v-html="require('~/static/img/' + stripExtension(src) + '.svg?include')"
   />
 
   <!-- if gif filetype, no reponsive sizes generated, just webp and compression -->
@@ -18,12 +18,12 @@
   <picture v-else-if="isGIF()">
     <source
       :data-srcset="
-        require('~/assets/images/' + stripExtension(src) + '.gif?webp')
+        require('~/static/img/' + stripExtension(src) + '.gif?webp')
       "
       type="image/webp"
     />
     <img
-      :data-src="require('~/assets/images/' + stripExtension(src) + '.gif')"
+      :data-src="require('~/static/img/' + stripExtension(src) + '.gif')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -33,7 +33,7 @@
   <picture v-else-if="size == 'lg'">
     <source
       :data-srcset="
-        require('~/assets/images/' +
+        require('~/static/img/' +
           src +
           '?resize&min=320&max=2160&steps=4&format=webp').srcSet
       "
@@ -41,14 +41,14 @@
     />
     <source
       :data-srcset="
-        require('~/assets/images/' + src + '?resize&min=320&max=1080&steps=3')
+        require('~/static/img/' + src + '?resize&min=320&max=1080&steps=3')
           .srcSet
       "
       type="image/jpeg"
     />
     <img
-      :data-src="require('~/assets/images/' + src)"
-      :src="require('~/assets/images/' + src + '?lqip')"
+      :data-src="require('~/static/img/' + src)"
+      :src="require('~/static/img/' + src + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -58,7 +58,7 @@
   <picture v-else-if="size == 'md'">
     <source
       :data-srcset="
-        require('~/assets/images/' +
+        require('~/static/img/' +
           src +
           '?resize&min=180&max=640&steps=3&format=webp').srcSet
       "
@@ -66,14 +66,14 @@
     />
     <source
       :data-srcset="
-        require('~/assets/images/' + src + '?resize&min=180&max=640&steps=3')
+        require('~/static/img/' + src + '?resize&min=180&max=640&steps=3')
           .srcSet
       "
       type="image/jpeg"
     />
     <img
-      :data-src="require('~/assets/images/' + src)"
-      :src="require('~/assets/images/' + src + '?lqip')"
+      :data-src="require('~/static/img/' + src)"
+      :src="require('~/static/img/' + src + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -83,7 +83,7 @@
   <picture v-else>
     <source
       :data-srcset="
-        require('~/assets/images/' +
+        require('~/static/img/' +
           src +
           '?resize&min=100&max=200&steps=2&format=webp').srcSet
       "
@@ -91,14 +91,14 @@
     />
     <source
       :data-srcset="
-        require('~/assets/images/' + src + '?resize&min=100&max=200&steps=2')
+        require('~/static/img/' + src + '?resize&min=100&max=200&steps=2')
           .srcSet
       "
       type="image/jpeg"
     />
     <img
-      :data-src="require('~/assets/images/' + src)"
-      :src="require('~/assets/images/' + src + '?lqip')"
+      :data-src="require('~/static/img/' + src)"
+      :src="require('~/static/img/' + src + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -108,7 +108,7 @@
 <script>
 export default {
   props: {
-    // the name of the image in ~/assets/images or images_svg or images_gif folders
+    // the name of the image in ~/static/img or images_svg or images_gif folders
     // choosen automatic based on image extension
     // Use as: <BaseImage src="someimg.gif" ... />
     src: {
