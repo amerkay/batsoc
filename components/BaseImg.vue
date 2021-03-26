@@ -1,7 +1,7 @@
 <template>
   <picture v-if="isURL()">
-    <source :data-srcset="src" type="image/webp" />
-    <img :data-src="src" :class="['lazyload', imgClass]" :alt="alt" />
+    <source :data-srcset="getSrc()" type="image/webp" />
+    <img :data-src="getSrc()" :class="['lazyload', imgClass]" :alt="alt" />
   </picture>
 
   <!-- For explanation of v-if v-else see https://vuejs.org/v2/guide/conditional.html -->
@@ -10,7 +10,9 @@
   <!-- For SVGs no img-class can be used, just class -->
   <div
     v-else-if="isSVG()"
-    v-html="require('~/static/img/' + stripExtension(src) + '.svg?include')"
+    v-html="
+      require('~/static/img/' + stripExtension(getSrc()) + '.svg?include')
+    "
   />
 
   <!-- if gif filetype, no reponsive sizes generated, just webp and compression -->
@@ -18,12 +20,12 @@
   <picture v-else-if="isGIF()">
     <source
       :data-srcset="
-        require('~/static/img/' + stripExtension(src) + '.gif?webp')
+        require('~/static/img/' + stripExtension(getSrc()) + '.gif?webp')
       "
       type="image/webp"
     />
     <img
-      :data-src="require('~/static/img/' + stripExtension(src) + '.gif')"
+      :data-src="require('~/static/img/' + stripExtension(getSrc()) + '.gif')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -34,21 +36,21 @@
     <source
       :data-srcset="
         require('~/static/img/' +
-          src +
+          getSrc() +
           '?resize&min=320&max=2160&steps=4&format=webp').srcSet
       "
       type="image/webp"
     />
     <source
       :data-srcset="
-        require('~/static/img/' + src + '?resize&min=320&max=1080&steps=3')
+        require('~/static/img/' + getSrc() + '?resize&min=320&max=1080&steps=3')
           .srcSet
       "
       type="image/jpeg"
     />
     <img
-      :data-src="require('~/static/img/' + src)"
-      :src="require('~/static/img/' + src + '?lqip')"
+      :data-src="require('~/static/img/' + getSrc())"
+      :src="require('~/static/img/' + getSrc() + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -59,21 +61,21 @@
     <source
       :data-srcset="
         require('~/static/img/' +
-          src +
+          getSrc() +
           '?resize&min=180&max=640&steps=3&format=webp').srcSet
       "
       type="image/webp"
     />
     <source
       :data-srcset="
-        require('~/static/img/' + src + '?resize&min=180&max=640&steps=3')
+        require('~/static/img/' + getSrc() + '?resize&min=180&max=640&steps=3')
           .srcSet
       "
       type="image/jpeg"
     />
     <img
-      :data-src="require('~/static/img/' + src)"
-      :src="require('~/static/img/' + src + '?lqip')"
+      :data-src="require('~/static/img/' + getSrc())"
+      :src="require('~/static/img/' + getSrc() + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -84,21 +86,21 @@
     <source
       :data-srcset="
         require('~/static/img/' +
-          src +
+          getSrc() +
           '?resize&min=100&max=200&steps=2&format=webp').srcSet
       "
       type="image/webp"
     />
     <source
       :data-srcset="
-        require('~/static/img/' + src + '?resize&min=100&max=200&steps=2')
+        require('~/static/img/' + getSrc() + '?resize&min=100&max=200&steps=2')
           .srcSet
       "
       type="image/jpeg"
     />
     <img
-      :data-src="require('~/static/img/' + src)"
-      :src="require('~/static/img/' + src + '?lqip')"
+      :data-src="require('~/static/img/' + getSrc())"
+      :src="require('~/static/img/' + getSrc() + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
@@ -147,6 +149,9 @@ export default {
     },
     stripExtension(filename) {
       return filename.split('.').slice(0, -1).join('.')
+    },
+    getSrc() {
+      return this.src.replace('/img/', '').replace('img/', '')
     },
   },
 }
