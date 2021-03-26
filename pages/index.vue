@@ -14,7 +14,7 @@
 
     <LandingFAQ id="faq" :cData="faqData" />
 
-    <landing-team id="team" />
+    <landing-team id="team" :cData="teamData" />
   </div>
 </template>
 
@@ -43,6 +43,8 @@ export default {
 
     const faqData = await $content('landing-page/faq').fetch()
 
+    const teamData = await $content('landing-page/team').fetch()
+
     return {
       heroData,
       // logoCloudData,
@@ -51,6 +53,7 @@ export default {
       eventsHeadingData,
       eventsData,
       faqData,
+      teamData,
     }
   },
 }
