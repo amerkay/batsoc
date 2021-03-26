@@ -234,6 +234,62 @@ collections:
               - label: 'FAQ Answer'
                 name: answer
                 <<: *WidgetMDMin
+
+      - label: Team Section
+        name: team
+        format: 'json'
+        file: 'content/landing-page/team.json'
+        editor:
+          preview: false
+        fields:
+          - label: Heading Text (Large text)
+            name: h2
+            widget: string
+          # - label: Heading Text Line 2 (Large text)
+          #   name: heading
+          #   widget: string
+          - label: About the Team Text
+            name: aboutText
+            widget: text
+          - label: 'Team Members'
+            name: 'members'
+            widget: 'list'
+            summary: '{{fields.name}}'
+            fields:
+              - label: 'Name'
+                name: name
+                widget: string
+                required: true
+              - label: 'Position or Title'
+                hint: 'President or Social Media Manager, etc.'
+                name: title
+                widget: string
+                required: true
+              - label: 'About the person'
+                hint: 'A couple of sentences about the team member and their role.'
+                name: desc
+                widget: text
+                required: true
+              - label: 'Member Photo'
+                name: 'img'
+                widget: 'image'
+                required: true
+              - label: 'Twitter @username (not URL)'
+                hint: 'Not URL or @user, just batsandtreessocietyofcairns for example.'
+                name: 'twitter'
+                widget: 'string'
+                required: false
+              - label: 'Instagram @username (not URL)'
+                hint: 'Not URL or @user, just batsandtreessocietyofcairns for example.'
+                name: 'instagram'
+                widget: 'string'
+                required: false
+              - label: 'Website URL (https://example.com)'
+                name: 'websiteUrl'
+                widget: 'string'
+                pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', "Must be a url. Example: https://test.com"]
+                required: false
+              
   
   ##
   ## Events Collection
