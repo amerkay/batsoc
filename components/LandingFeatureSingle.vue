@@ -32,12 +32,20 @@
           <div
             class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full"
           >
-            <img
-              class="w-full rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+            <base-img
+              :img-class="'w-full rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none ' +
+                (isImgOnLeft ? 'right-0' : 'left-0')
+              "
+              :src="img"
+              :alt="heading"
+              size="lg"
+            />
+            <!-- <img
+              class=""
               :class="[isImgOnLeft ? 'right-0' : 'left-0']"
               :src="img"
               :alt="heading"
-            />
+            /> -->
           </div>
         </div>
       </div>

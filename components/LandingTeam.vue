@@ -40,13 +40,15 @@
           >
             <li v-for="m in cData.members" :key="m.name">
               <div class="space-y-4">
-                <div class="aspect-w-3 aspect-h-2">
-                  <img
-                    class="object-cover rounded-lg shadow-lg"
-                    :src="m.img"
-                    :alt="`${m.name}, ${m.name}`"
-                  />
-                </div>
+                <!-- <div class="aspect-w-3 aspect-h-2"> -->
+                <base-img
+                  class="block aspect-w-3 aspect-h-2"
+                  img-class="object-cover rounded-lg shadow-lg"
+                  :src="m.img"
+                  :alt="`${m.name}, ${m.name}`"
+                  size="md"
+                />
+                <!-- </div> -->
                 <div class="space-y-1 text-lg font-medium leading-6">
                   <h3>{{ m.name }}</h3>
                   <p class="text-navy-500">{{ m.name }}</p>

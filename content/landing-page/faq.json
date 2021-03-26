@@ -5,7 +5,7 @@
   "questions": [
     {
       "question": "What's the best thing about Flying foxes?",
-      "answer": "**Everything is!** Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.\n\n![Cute AF!](/img/fox9.jpg \"Cute AF!\")\n\nThis is how:\n\n* Lorem ipsum dolor sit\n* Amet consectetur adipisicing elit. \n* Quas cupiditate laboriosam fugiat."
+      "answer": "**Everything is!** Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.\n\n![Cute AF!](fox9.jpg \"Cute AF!\")\n\nThis is how:\n\n* Lorem ipsum dolor sit\n* Amet consectetur adipisicing elit. \n* Quas cupiditate laboriosam fugiat."
     },
     {
       "question": "What's the best thing about Flying f0xes?",

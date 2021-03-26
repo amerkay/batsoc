@@ -16,10 +16,11 @@
           class="flex flex-col overflow-hidden rounded-lg shadow-lg"
         >
           <div class="flex-shrink-0">
-            <img
-              class="object-cover w-full h-48"
-              :src="event.img ? event.img : require('~/static/img/fox1.webp')"
-              alt=""
+            <base-img
+              img-class="w-full h-48"
+              :src="event.img ? event.img : 'fox1.jpg'"
+              :alt="event.title"
+              size="md"
             />
           </div>
           <div class="flex flex-col justify-between flex-1 p-6 bg-white">

@@ -4,10 +4,11 @@
     <div
       class="h-56 bg-navy-500 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2"
     >
-      <img
-        class="object-cover w-full h-full"
-        src="../static/img/fox2.jpg"
-        alt=""
+      <base-img
+        img-class="object-cover w-full h-full"
+        :src="cData.img"
+        :alt="cData.h2"
+        size="lg"
       />
     </div>
     <div class="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-16">
