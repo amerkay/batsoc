@@ -54,11 +54,13 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/juliomrqz/nuxt-optimized-images
-    '@aceforth/nuxt-optimized-images',
+    // '@aceforth/nuxt-optimized-images',
     // Doc: https://github.com/ivodolenc/nuxt-lazysizes
     'nuxt-lazysizes',
     // Doc https://vueformulate.com/guide/installation/#nuxt
     '@braid/vue-formulate/nuxt',
+    // https://github.com/nuxt-community/svg-module#readme
+    '@nuxtjs/svg',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -73,11 +75,11 @@ export default {
     configPath: '~/formulate.config.js',
   },
 
-  optimizedImages: {
-    optimizeImages: true,
-    optimizeImagesInDev: false,
-    inlineImageLimit: 5000,
-  },
+  // optimizedImages: {
+  //   optimizeImages: true,
+  //   optimizeImagesInDev: false,
+  //   inlineImageLimit: 5000,
+  // },
 
   webfontloader: {
     google: {

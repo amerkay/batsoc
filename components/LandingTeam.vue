@@ -52,7 +52,7 @@
                 <!-- </div> -->
                 <div class="space-y-1 text-lg font-medium leading-6">
                   <h3>{{ m.name }}</h3>
-                  <p class="text-navy-500">{{ m.name }}</p>
+                  <p class="text-navy-500">{{ m.title }}</p>
                 </div>
                 <div class="text-lg">
                   <p class="text-gray-500">
