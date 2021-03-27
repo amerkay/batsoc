@@ -1,7 +1,7 @@
 <template>
   <div>
     <landing-hero :cData="heroData" />
-    <!-- <landing-logo-cloud :cData="logoCloudData" /> -->
+    <landing-logo-cloud :cData="logoCloudData" />
     <landing-features :cData="featuresData" />
 
     <LandingCTA :cData="cta1Data" class="mt-16" />
@@ -22,7 +22,7 @@
 export default {
   async asyncData({ $content }) {
     const heroData = await $content('landing-page/hero').fetch()
-    // const logoCloudData = await $content('landing-page/logo-cloud').fetch()
+    const logoCloudData = await $content('landing-page/logo-cloud').fetch()
     const featuresData = await $content('landing-page/features').fetch()
 
     const cta1Data = await $content('landing-page/cta1').fetch()
@@ -47,7 +47,7 @@ export default {
 
     return {
       heroData,
-      // logoCloudData,
+      logoCloudData,
       featuresData,
       cta1Data,
       eventsHeadingData,

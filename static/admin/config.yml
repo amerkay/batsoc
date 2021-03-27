@@ -117,6 +117,7 @@ collections:
                 name: url
                 widget: string
                 default: '/'
+                required: false
 
       - label: What We Do Section
         name: features
