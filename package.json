@@ -31,6 +31,7 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
     "lqip-loader": "^2.1.1",
+    "netlify-plugin-image-optim": "^0.4.0",
     "nuxt-lazysizes": "^1.2.0",
     "nuxt-webfontloader": "^1.1.0",
     "postcss": "^8.2.8",

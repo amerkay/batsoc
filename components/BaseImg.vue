@@ -1,6 +1,5 @@
 <template>
   <picture v-if="isURL()">
-    <source :data-srcset="getSrc()" type="image/webp" />
     <img :data-src="getSrc()" :class="['lazyload', imgClass]" :alt="alt" />
   </picture>
 
@@ -17,90 +16,9 @@
 
   <!-- if gif filetype, no reponsive sizes generated, just webp and compression -->
   <!-- Note: for GIF, the `size` property is ignored -->
-  <picture v-else-if="isGIF()">
-    <source
-      :data-srcset="
-        require('~/static/img/' + stripExtension(getSrc()) + '.gif?webp')
-      "
-      type="image/webp"
-    />
-    <img
-      :data-src="require('~/static/img/' + stripExtension(getSrc()) + '.gif')"
-      :class="['lazyload', imgClass]"
-      :alt="alt"
-    />
-  </picture>
-
-  <!-- prop 'size' is lg -->
-  <picture v-else-if="size == 'lg'">
-    <source
-      :data-srcset="
-        require('~/static/img/' +
-          getSrc() +
-          '?resize&min=320&max=2160&steps=4&format=webp').srcSet
-      "
-      type="image/webp"
-    />
-    <source
-      :data-srcset="
-        require('~/static/img/' + getSrc() + '?resize&min=320&max=1080&steps=3')
-          .srcSet
-      "
-      type="image/jpeg"
-    />
-    <img
-      :data-src="require('~/static/img/' + getSrc())"
-      :src="require('~/static/img/' + getSrc() + '?lqip')"
-      :class="['lazyload', imgClass]"
-      :alt="alt"
-    />
-  </picture>
-
-  <!-- prop 'size' is md -->
-  <picture v-else-if="size == 'md'">
-    <source
-      :data-srcset="
-        require('~/static/img/' +
-          getSrc() +
-          '?resize&min=180&max=640&steps=3&format=webp').srcSet
-      "
-      type="image/webp"
-    />
-    <source
-      :data-srcset="
-        require('~/static/img/' + getSrc() + '?resize&min=180&max=640&steps=3')
-          .srcSet
-      "
-      type="image/jpeg"
-    />
-    <img
-      :data-src="require('~/static/img/' + getSrc())"
-      :src="require('~/static/img/' + getSrc() + '?lqip')"
-      :class="['lazyload', imgClass]"
-      :alt="alt"
-    />
-  </picture>
-
-  <!-- prop 'size' is sm -->
   <picture v-else>
-    <source
-      :data-srcset="
-        require('~/static/img/' +
-          getSrc() +
-          '?resize&min=100&max=200&steps=2&format=webp').srcSet
-      "
-      type="image/webp"
-    />
-    <source
-      :data-srcset="
-        require('~/static/img/' + getSrc() + '?resize&min=100&max=200&steps=2')
-          .srcSet
-      "
-      type="image/jpeg"
-    />
     <img
       :data-src="require('~/static/img/' + getSrc())"
-      :src="require('~/static/img/' + getSrc() + '?lqip')"
       :class="['lazyload', imgClass]"
       :alt="alt"
     />
