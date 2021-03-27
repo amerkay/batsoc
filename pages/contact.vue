@@ -145,7 +145,6 @@
                     rows="6"
                     validation="required|min:10,max:500,length"
                     validation-name="Message"
-                    error-behavior="live"
                   ></FormulateInput>
                 </div>
               </div>
