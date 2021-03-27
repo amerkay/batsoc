@@ -2,23 +2,28 @@
   "logos": [
     {
       "alt": "Test Logo",
-      "img": "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+      "img": "/img/logo-fnqwildliferescue.svg",
+      "url": "https://test.com"
+    },
+    {
+      "alt": "BatReach Kuranda",
+      "img": "/img/logo-batreach.png",
+      "url": "https://test.com"
     },
     {
       "alt": "Test 2",
-      "img": "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+      "img": "/img/actwildlife.net.gif",
+      "url": "https://test.com"
     },
     {
       "alt": "Test 2",
-      "img": "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+      "img": "/img/logo-environment.gov.au.png",
+      "url": "https://test.com"
     },
     {
       "alt": "Test 2",
-      "img": "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-    },
-    {
-      "alt": "Test 2",
-      "img": "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+      "img": "/img/logo-wildlifevictoria.png",
+      "url": "https://test.com"
     }
   ]
 }
