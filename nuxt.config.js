@@ -64,8 +64,12 @@ export default {
     '@braid/vue-formulate/nuxt',
   ],
 
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: `://${hostname}`,
+    baseURL:
+      process.env.NODE_ENV == 'production'
+        ? 'https://batsoc.netlify.app'
+        : 'http://localhost:8888',
   },
 
   formulate: {
