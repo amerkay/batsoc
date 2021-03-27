@@ -74,7 +74,10 @@
               v-model="form"
               class="grid grid-cols-1 mt-9 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               @submit="handleSubmit"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
             >
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label
                   for="first_name"

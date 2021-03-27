@@ -1,6 +1,3 @@
-var os = require('os')
-var hostname = os.hostname()
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
