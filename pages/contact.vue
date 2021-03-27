@@ -206,6 +206,10 @@
 </template>
 
 <script>
+// Tutorial at https://www.netlify.com/blog/2018/09/07/how-to-integrate-netlify-forms-in-a-vue-app/
+
+// I used Vue-Formulate https://vueformulate.com/guide/ for form validation and handling
+// Styling in formulate.config.js
 export default {
   data() {
     return {

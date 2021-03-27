@@ -1,3 +1,6 @@
+var os = require('os')
+var hostname = os.hostname()
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -60,6 +63,10 @@ export default {
     // Doc https://vueformulate.com/guide/installation/#nuxt
     '@braid/vue-formulate/nuxt',
   ],
+
+  axios: {
+    baseURL: `://${hostname}`,
+  },
 
   formulate: {
     configPath: '~/formulate.config.js',
