@@ -43,6 +43,8 @@ export default {
     'nuxt-webfontloader',
     // Doc https://github.com/nuxt-community/dayjs-module
     '@nuxtjs/dayjs',
+    // Doc https://axios.nuxtjs.org/setup
+    '@nuxtjs/axios',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -55,7 +57,13 @@ export default {
     '@aceforth/nuxt-optimized-images',
     // Doc: https://github.com/ivodolenc/nuxt-lazysizes
     'nuxt-lazysizes',
+    // Doc https://vueformulate.com/guide/installation/#nuxt
+    '@braid/vue-formulate/nuxt',
   ],
+
+  formulate: {
+    configPath: '~/formulate.config.js',
+  },
 
   optimizedImages: {
     optimizeImages: true,

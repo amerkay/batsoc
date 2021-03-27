@@ -9,6 +9,28 @@
       "url": "/#what-do-we-do"
     },
     {
+      "label": "Events",
+      "url": "/#events"
+    },
+    {
+      "label": "FAQ",
+      "url": "/#faq"
+    },
+    {
+      "label": "Team",
+      "url": "/#team"
+    },
+    {
+      "label": "Contact Us",
+      "url": "/contact"
+    }
+  ],
+  "footerLinks": [
+    {
+      "label": "What do we do?",
+      "url": "/#what-do-we-do"
+    },
+    {
       "label": "Upcoming Events",
       "url": "/#events"
     },
@@ -19,14 +41,18 @@
     {
       "label": "Our Team",
       "url": "/#team"
+    },
+    {
+      "label": "Contact Us",
+      "url": "/contact"
     }
   ],
   "facebook": "BATSOCinc",
   "twitter": "BATSOCinc",
   "instagram": "batsandtreessocietyofcairns",
-  "footer_text": "Etiam ornare velit augue, at commodo lectus varius sit amet.   Curabitur faucibus urna a orci iaculis mollis.",
+  "footerText": "© 2021 BatSoc Inc, Inc. All rights reserved.",
   "nav_left_button": {
     "label": "Donate via Patreon",
-    "url": "https://www.patreon.com/charlimarie"
+    "url": "https://www.patreon.com/Twistoffatefarmsanctuary"
   }
 }

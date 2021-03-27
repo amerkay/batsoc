@@ -5,48 +5,56 @@
         class="flex flex-wrap justify-center -mx-5 -my-2"
         aria-label="Footer"
       >
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-300 hover:text-gray-100">
-            About
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-300 hover:text-gray-100">
-            Contact Us
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-300 hover:text-gray-100">
-            Press
-          </a>
+        <div
+          v-for="link in siteSettings.footerLinks"
+          :key="link.label"
+          class="px-5 py-2"
+        >
+          <nuxt-link
+            :to="link.url"
+            class="text-base text-gray-300 hover:text-gray-100"
+          >
+            {{ link.label }}
+          </nuxt-link>
         </div>
       </nav>
       <div class="flex justify-center mt-8 space-x-6">
-        <a href="#" class="text-gray-300 hover:text-gray-100">
+        <a
+          :href="'https://facebook.com/' + siteSettings.facebook"
+          class="text-gray-300 hover:text-gray-100"
+          target="_blank"
+        >
           <span class="sr-only">Facebook</span>
           <facebook-icon size="1.5x" class="w-6 h-6"></facebook-icon>
         </a>
 
-        <a href="#" class="text-gray-300 hover:text-gray-100">
+        <a
+          :href="'https://instagram.com/' + siteSettings.instagram"
+          class="text-gray-300 hover:text-gray-100"
+          target="_blank"
+        >
           <span class="sr-only">Instagram</span>
           <instagram-icon size="1.5x" class="w-6 h-6"></instagram-icon>
         </a>
       </div>
       <p class="mt-8 text-base text-center text-gray-200">
-        &copy; 2021 BatSoc Inc, Inc. All rights reserved.
+        {{ siteSettings.footerText }}
       </p>
     </div>
   </footer>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { FacebookIcon, InstagramIcon } from 'vue-feather-icons'
+
 export default {
   components: {
     FacebookIcon,
     InstagramIcon,
+  },
+  computed: {
+    ...mapState('netlifycms', ['siteSettings']),
   },
 }
 </script>

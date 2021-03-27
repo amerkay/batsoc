@@ -369,7 +369,16 @@ collections:
         editor:
           preview: false
         fields:
-          - label: "Profile"
+          - label: 'Facebook Page slug (not url)'
+            name: 'facebook'
+            widget: 'string'
+          - label: 'Twitter @username (not URL)'
+            name: 'twitter'
+            widget: 'string'
+          - label: 'Instagram @username (not URL)'
+            name: 'instagram'
+            widget: 'string'
+          - label: "Navigate Left CTA Button"
             name: "nav_left_button"
             widget: "object"
             summary: '{{fields.label}}: {{fields.url}}'
@@ -395,18 +404,21 @@ collections:
                 name: url
                 widget: string
                 default: '/'
-              
-          - label: 'Facebook Page slug (not url)'
-            name: 'facebook'
-            widget: 'string'
-          - label: 'Twitter @username (not URL)'
-            name: 'twitter'
-            widget: 'string'
-          - label: 'Instagram @username (not URL)'
-            name: 'instagram'
-            widget: 'string'
+          - label: 'Footer Links'
+            name: 'footerLinks'
+            widget: 'list'
+            summary: '{{fields.label}}: {{fields.url}}'
+            fields:
+              - label: 'URL Anchor'
+                name: label
+                widget: string
+                default: ''
+              - label: 'URL excluding batsoc.org.au'
+                name: url
+                widget: string
+                default: '/'
           - label: 'Footer text'
-            name: 'footer_text'
+            name: 'footerText'
             widget: 'string'
           - label: 'Meta Data Defaults'
             name: 'meta'
