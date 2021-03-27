@@ -76,6 +76,8 @@
               @submit="handleSubmit"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              name="contact"
+              method="POST"
             >
               <input type="hidden" name="form-name" value="contact" />
               <div>
