@@ -104,7 +104,7 @@ collections:
           - label: 'Logos'
             name: 'logos'
             widget: 'list'
-            summary: '{{fields.img}}: {{fields.a;t}}'
+            summary: '{{fields.img}}: {{fields.alt}}'
             fields:
               - label: 'Logo Image (must be png or svg transparent)'
                 name: img
@@ -113,6 +113,10 @@ collections:
                 name: alt
                 widget: string
                 default: ''
+              - label: 'URL (https://example.com)'
+                name: url
+                widget: string
+                default: '/'
 
       - label: What We Do Section
         name: features
