@@ -44,7 +44,7 @@ export default {
     // Doc https://github.com/nuxt-community/dayjs-module
     '@nuxtjs/dayjs',
     // Doc https://axios.nuxtjs.org/setup
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -62,12 +62,12 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    baseURL:
-      process.env.NODE_ENV == 'production'
-        ? 'https://batsoc.netlify.app'
-        : 'http://localhost:8888',
-  },
+  // axios: {
+  //   baseURL:
+  //     process.env.NODE_ENV == 'production'
+  //       ? 'https://batsoc.netlify.app'
+  //       : 'http://localhost:8888',
+  // },
 
   formulate: {
     configPath: '~/formulate.config.js',

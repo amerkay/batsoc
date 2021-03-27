@@ -5,10 +5,10 @@
         class="flex items-center justify-between py-3 md:justify-start md:space-x-10"
       >
         <div class="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#">
+          <nuxt-link to="/">
             <span class="sr-only">BatSoc</span>
             <logo class="h-12 sm:h-16" />
-          </a>
+          </nuxt-link>
         </div>
 
         <div class="-my-2 -mr-2 md:hidden">
@@ -51,13 +51,13 @@
         </nav>
 
         <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
-          <a
-            :href="siteSettings.nav_left_button.url"
+          <nuxt-link
+            :to="siteSettings.nav_left_button.url"
             class="btn btn-primary"
             @click="mobileNavOpen = false"
           >
             {{ siteSettings.nav_left_button.label }}
-          </a>
+          </nuxt-link>
         </div>
       </div>
     </div>

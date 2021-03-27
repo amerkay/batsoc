@@ -66,11 +66,18 @@
               Let's work together
             </h2>
             <p class="mt-4 text-lg text-gray-500 sm:mt-3">
-              We’d love to hear from you! Send us a message using the form
-              opposite, or email us. We’d love to hear from you! Send us a
-              message using the form.
+              We’d love to hear from you! Send us a message using the form.
             </p>
+
+            <base-alert
+              v-if="isSuccess"
+              class="mt-10 sm:col-span-2"
+              text="Thank you  for contacting us. We'll be in touch soon :)"
+              alertType="success"
+            />
+
             <FormulateForm
+              v-else
               v-model="form"
               class="grid grid-cols-1 mt-9 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               @submit="handleSubmit"
@@ -177,6 +184,12 @@
                   />
                 </div>
               </div>
+              <base-alert
+                v-if="isFailed && !isSuccess"
+                class="sm:col-span-2"
+                text="Oops! Something went wrong. Please try again or email us."
+                alert-type="danger"
+              />
               <div class="text-right sm:col-span-2">
                 <FormulateInput
                   type="submit"
@@ -200,7 +213,7 @@
           <span class="block text-orange-900">Message us.</span>
         </h2>
         <a
-          href="#"
+          href="/contact"
           class="inline-flex items-center justify-center w-full px-5 py-3 mt-8 text-base font-medium text-orange-600 bg-white border border-transparent rounded-md shadow-md hover:bg-orange-50 sm:w-auto"
         >
           <span>Send us a message, say hi!</span>
@@ -220,10 +233,12 @@ export default {
     return {
       isSubmitting: false,
       isSuccess: false,
-      isError: false,
+      isFailed: false,
       form: {},
     }
   },
+  // mounted() {
+  // },
   methods: {
     encode(data) {
       return Object.keys(data)
@@ -235,24 +250,22 @@ export default {
     handleSubmit() {
       this.isSubmitting = true
 
-      const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      }
-      this.$axios
-        .$post(
-          '/',
-          this.encode({
-            'form-name': 'contact',
-            ...this.form,
-          }),
-          axiosConfig
-        )
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': 'contact',
+          ...this.form,
+        }),
+      })
         .then(() => {
           console.log('Success')
+          this.isSuccess = true
           // this.$router.push('thanks')
         })
         .catch(() => {
           console.log('Failed')
+          this.isFailed = true
           // this.$router.push('404')
         })
         .finally(() => {
