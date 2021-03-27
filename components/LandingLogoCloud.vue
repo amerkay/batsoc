@@ -6,7 +6,7 @@
         <a
           :href="logo.url"
           target="_blank"
-          class="flex items-center justify-center h-full col-span-1 md:col-span-2 lg:col-span-1 opacity-80 hover:opacity-100"
+          class="flex items-center justify-center h-full col-span-1 md:col-span-2 lg:col-span-1 opacity-70 hover:opacity-100"
           v-for="logo in cData.logos"
           :key="logo.img"
         >
